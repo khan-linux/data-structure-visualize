@@ -79,8 +79,12 @@ function App() {
   const [auth, setAuth] = useState(null); const [db, setDb] = useState(null);
   const [userId, setUserId] = useState(null); const [isAuthReady, setIsAuthReady] = useState(false);
   const svgRef = useRef(null);
-  const [removingNodeId, setRemovingNodeId] = useState(null); 
-  const [prevNodeIdLL, setPrevNodeIdLL] = useState(null); 
+  const [removingNodeId, setRemovingNodeId] = useState(null);
+  const [prevNodeIdLL, setPrevNodeIdLL] = useState(null);
+
+  useEffect(() => {
+    setIsAuthReady(true);
+  }, []);
 
 
   const resetVisualState = () => {
